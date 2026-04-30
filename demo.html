@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      #active-menu {
+        color: #5570f8;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+      }
+
+      /* Navbar Styles */
+
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.924);
+        padding: 16px;
+        border-bottom: 1px solid #dbdbdb;
+
+        position: sticky;
+        top: 0;
+      }
+
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #logo {
+        font-size: 26px;
+        font-weight: bold;
+      }
+
+      .nav-menu ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-menu ul li a {
+        color: rgb(85, 85, 85);
+      }
+
+      .btn-primary {
+        background-color: #5570f8;
+        padding: 14px 24px;
+        color: white;
+        border-radius: 30px;
+      }
+
+      .btn-secondary {
+        background-color: #000000;
+        padding: 14px 24px;
+        color: white;
+        border-radius: 30px;
+      }
+
+      /* Hero Section Styles */
+
+      .hero-container {
+    
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .hero-left {
+        width: 500px;
+        height: 500px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .greeting {
+        color: #5570f8;
+        font-weight: bold;
+      }
+
+      .hero-left h1 {
+        font-size: 70px;
+        font-weight: bold;
+      }
+
+      .hero-left h2 {
+        color: #94a3bc;
+        font-size: 30px;
+      }
+
+      .hero-left h2 span {
+        color: black;
+      }
+
+      .bio {
+        color: #94a2b7;
+      }
+
+      .points {
+        display: flex;
+        gap: 20px;
+      }
+
+      .points span {
+        background-color: #f1f5f9;
+        padding: 10px 15px;
+        border-radius: 30px;
+        border: 1px solid #e6e6e6;
+        font-weight: 600;
+        font-size: 14px;
+        color: #4a4a4a;
+      }
+
+      .hero-action {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .hero-right {
+        width: 500px;
+        border: 1px solid rgb(210, 210, 210);
+        padding: 50px;
+        border-radius: 30px;
+        background-color: #f1f5fd;
+      }
+
+      .hero-image img {
+        width: 100%;
+        border: 3px solid #7263f3;
+        border-radius: 30px;
+        background-color: white;
+      }
+
+      .info {
+        width: 100%;
+        padding: 20px 0;
+
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .tech-focus {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border: 1px solid #dbdbdb;
+        border-radius: 10px;
+      }
+
+      .tech-focus div {
+        width: 65%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .tech-focus div span {
+        padding: 15px 20px;
+        background-color: rgb(231, 231, 231);
+        border-radius: 10px;
+      }
+
+      .skills-section {
+        padding: 50px 0;
+      }
+
+      /*Skills Section Styles*/
+
+      .skills-container h2 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+
+      .skill-box-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .skill-box-container div {
+        width: 250px;
+        height: 250px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #dbdbdb;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .skill-box-container div span {
+        padding: 25px 30px;
+        background-color: rgb(231, 231, 231);
+        border-radius: 10px;
+      }
+
+      .skill-box-container div p {
+        color: #616161;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: #0e1628;
+        width: 100%;
+      }
+
+      .footer-top {
+        height: 300px;
+        padding: 50px 0;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #37385d;
+      }
+
+      .footer-top-left {
+        width: 20%;
+      }
+
+      .footer-top-left h1 {
+        margin-bottom: 20px;
+      }
+
+      .footer-top-left p {
+        color: #808298;
+        line-height: 1.5;
+      }
+
+      .footer-top-center {
+        width: 20%;
+      }
+
+      .footer-top-center h4 {
+        margin-bottom: 20px;
+        color: #343e53;
+      }
+
+      .footer-top-center ul {
+        list-style: none;
+      }
+
+      .footer-top-center ul li {
+        padding: 10px;
+      }
+      .footer-top-center ul li a {
+        color: white;
+      }
+
+      .footer-top-right {
+        height: 200px;
+        width: 20%;
+        border: 1px solid #37385d;
+        border-radius: 20px;
+        padding: 30px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        background-color: #151b2c;
+      }
+
+      .footer-top-right h4 {
+        color: #343e53;
+      }
+
+      .footer-top-right p {
+        color: #808298;
+        line-height: 1.5;
+      }
+
+      .footer-bottom {
+        color: #808298;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0;
+      }
+
+      .footer-bottom ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-bottom ul li a {
+        color: #808298;
+        border: 1px solid #4c4e63;
+        padding: 10px 15px;
+        background-color: #101524;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Nav Bar-->
+    <header class="navbar">
+      <div class="container navbar-container">
+        <a href="./home.html" id="logo">Portfolio</a>
+
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a id="active-menu" href="./home.html">Home</a>
+            </li>
+            <li>
+              <a href="./about.html">About</a>
+            </li>
+            <li>
+              <a href="./projects.html">Projects</a>
+            </li>
+            <li>
+              <a href="./blogs.html">Blogs</a>
+            </li>
+            <li>
+              <a href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-action">
+          <a href="#" class="btn-primary">Download CV</a>
+        </div>
+      </div>
+    </header>
+
+    <!--Hero Section-->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-left">
+          <p class="greeting">Hey there, I am</p>
+          <h1>Khun Si Thu</h1>
+          <h2>Professional <span>Front-end Developer</span></h2>
+          <p class="bio">
+            I design and build fast, elegant, and accessible web experiences
+            with modern front-end technologies.
+          </p>
+
+          <div class="points">
+            <span>Fast UI</span>
+            <span>Responsive</span>
+            <span>Accessible</span>
+          </div>
+
+          <div class="hero-action">
+            <a href="" class="btn-primary">Hire Me</a>
+            <a href="" class="btn-secondary">View Projects</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-image">
+            <img src="../images/hero.png" alt="" />
+          </div>
+
+          <div class="info">
+            <span>Open to freelance</span>
+            <span>Yangon, Myanmar</span>
+          </div>
+
+          <div class="tech-focus">
+            <span>Tech focus</span>
+            <div>
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Skills Section-->
+    <section class="skills-section">
+      <div class="container skills-container">
+        <h2>My Skills</h2>
+
+        <div class="skill-box-container">
+          <div>
+            <span>1</span>
+            <h3>HTML5 & Semantics</h3>
+            <p>
+              Clean structure, accessibility-first markup, and SEO-friendly
+              content.
+            </p>
+          </div>
+
+          <div>
+            <span>2</span>
+            <h3>CSS / UI Design</h3>
+            <p>
+              Responsive layouts, design systems, and smooth modern
+              interactions.
+            </p>
+          </div>
+
+          <div>
+            <span>3</span>
+            <h3>JavaScript & Interactivity</h3>
+            <p>
+              Dynamic content, DOM manipulation, and interactive user
+              experiences.
+            </p>
+          </div>
+
+          <div>
+            <span>4</span>
+            <h3>Responsive Development</h3>
+            <p>
+              Mobile-first UI that works beautifully across devices and screen
+              sizes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-top">
+          <div class="footer-top-left">
+            <h1>Portfolio</h1>
+            <p>
+              Crafting elevated digital experiences with modern web
+              technologies. Focused on high-performance UI and intuitive user
+              experiences.
+            </p>
+          </div>
+
+          <div class="footer-top-center">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="./home.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./projects.html">Projects</a></li>
+              <li><a href="./blogs.html">Blogs</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-top-right">
+            <h4>Let's Collaborate</h4>
+            <p>Available for freelance work and technical collaborations.</p>
+            <a class="btn-primary" href="./contact.html">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Khun Si Thu. All Rights Reserved.</p>
+          <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
